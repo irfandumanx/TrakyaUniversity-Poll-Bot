@@ -1,0 +1,21 @@
+{
+  "name": "Poll Bot",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://obs.trakya.edu.tr/",
+        "https://anket.trakya.edu.tr/*"
+      ],
+      "js": ["poll.js"]
+    }
+  ],
+  "permissions": ["activeTab", "tabs"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
